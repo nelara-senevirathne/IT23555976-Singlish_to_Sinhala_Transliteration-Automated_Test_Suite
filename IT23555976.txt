@@ -1,0 +1,5 @@
+Name: Senevirathne S W J N
+Student IT Number: IT23555976
+Group No: Y3.S1.WE.IT.01.01
+
+Git Repository Link: https://github.com/nelara-senevirathne/IT23555976-Singlish_to_Sinhala_Transliteration-Automated_Test_Suite.git
