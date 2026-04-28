@@ -1,5 +1,5 @@
 # Singlish to Sinhala Transliteration – Automated Test Suite
-
+## IT23555976 - Senevirathne S W J N
 **IT3040 – ITPM | Assignment 1 | Option 1**
 
 This project automates the testing of the **Chat Sinhala transliteration** function available at [https://www.pixelssuite.com/chat-translator](https://www.pixelssuite.com/chat-translator). It uses **Playwright** to simulate real user interactions and automatically records the actual output and pass/fail status for each test case in an Excel file.
