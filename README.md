@@ -9,9 +9,9 @@ This project automates the testing of the **Chat Sinhala transliteration** funct
 ## Project Structure
 
 ```
-test_automation/
+IT23555976/
 ├── test_automation.py          # Main Playwright automation script
-├── Assignment 1 - Test cases.xlsx  # Excel file with all 50 test cases
+├── IT23555976.xlsx  # Excel file with all 50 test cases
 └── Commands.txt                # Quick reference for commands
 ```
 
@@ -36,7 +36,7 @@ Follow these steps **once** to set up the project environment.
 Save the ZIP file to your **D: drive** and extract it so the folder path is:
 
 ```
-D:\test_automation\
+D:\IT23555976\
 ```
 
 ### Step 2 – Open Command Prompt
@@ -46,7 +46,7 @@ Press `Win + R`, type `cmd`, and press Enter.
 ### Step 3 – Navigate to the Project Folder
 
 ```bash
-cd /d D:\test_automation
+cd /d D:\IT23555976
 ```
 
 ### Step 4 – Install Required Dependencies
@@ -63,27 +63,12 @@ playwright install
 
 ---
 
-## Preparing the Excel File
-
-Before running the automation script:
-
-1. Open `Assignment 1 - Test cases.xlsx` from the `test_automation` folder.
-2. Make sure the following four columns are filled in for all 50 test cases:
-   - **Column A** – `Test Case ID` (e.g., Neg_0001)
-   - **Column B** – `Input length type` (S, M, or L)
-   - **Column C** – `Input` (the Singlish text to test)
-   - **Column D** – `Expected output` (the correct Sinhala translation)
-3. **Do NOT enter anything** in Column E (`Actual output`) or Column F (`Status`) — these are filled in automatically by the script.
-4. Save and **close** the Excel file before running the script.
-
----
-
 ## Running the Tests
 
-From the Command Prompt (inside `D:\test_automation`), run the following command:
+From the Command Prompt (inside `D:\IT23555976`), run the following command:
 
 ```bash
-python test_automation.py --excel "test_automation/Assignment 1 - Test cases.xlsx" --url "https://www.pixelssuite.com/chat-translator" --wait-ms 5000 --type-delay-ms 80 --slow-mo-ms 200 --save-every 1 --keep-open
+python test_automation.py --excel "IT23555976/IT23555976.xlsx" --url "https://www.pixelssuite.com/chat-translator" --wait-ms 5000 --type-delay-ms 80 --slow-mo-ms 200 --save-every 1 --keep-open
 ```
 
 ### What Happens When You Run It
@@ -105,16 +90,16 @@ python test_automation.py --excel "test_automation/Assignment 1 - Test cases.xls
 
 ## Command Arguments Explained
 
-| Argument | Value Used | Description |
-|---|---|---|
-| `--excel` | Path to Excel file | Location of the test cases file |
-| `--url` | `https://www.pixelssuite.com/chat-translator` | The URL of the application being tested |
-| `--wait-ms` | `5000` | Time (ms) to wait for the Sinhala output to appear after each input (5 seconds) |
-| `--type-delay-ms` | `80` | Delay (ms) between each keystroke when typing input (simulates human typing) |
-| `--slow-mo-ms` | `200` | Adds a 200ms slow-motion delay between all browser actions |
-| `--save-every` | `1` | Saves the Excel file after every single test case |
-| `--keep-open` | _(flag)_ | Keeps the browser open after all tests finish |
-| `--headless` | _(not used)_ | Add this flag to run without opening a visible browser window |
+| Argument          | Value Used                                    | Description                                                                     |
+| ----------------- | --------------------------------------------- | ------------------------------------------------------------------------------- |
+| `--excel`         | Path to Excel file                            | Location of the test cases file                                                 |
+| `--url`           | `https://www.pixelssuite.com/chat-translator` | The URL of the application being tested                                         |
+| `--wait-ms`       | `5000`                                        | Time (ms) to wait for the Sinhala output to appear after each input (5 seconds) |
+| `--type-delay-ms` | `80`                                          | Delay (ms) between each keystroke when typing input (simulates human typing)    |
+| `--slow-mo-ms`    | `200`                                         | Adds a 200ms slow-motion delay between all browser actions                      |
+| `--save-every`    | `1`                                           | Saves the Excel file after every single test case                               |
+| `--keep-open`     | _(flag)_                                      | Keeps the browser open after all tests finish                                   |
+| `--headless`      | _(not used)_                                  | Add this flag to run without opening a visible browser window                   |
 
 ---
 
@@ -122,35 +107,35 @@ python test_automation.py --excel "test_automation/Assignment 1 - Test cases.xls
 
 After the script finishes:
 
-1. Open `Assignment 1 - Test cases.xlsx` from the `test_automation` folder.
+1. Open `IT23555976.xlsx` from the `IT23555976` folder.
 2. Column E (`Actual output`) – Contains the text that the application actually produced.
 3. Column F (`Status`) – Contains one of the following:
-   - **FAIL** – The actual output did not match the expected output ✅ *(expected for all 50 negative test cases)*
-   - **PASS** – The actual output matched the expected output *(replace this test case with a better one)*
-   - **UI Error** – The script could not interact with the browser for that row *(check your internet connection and re-run)*
+   - **FAIL** – The actual output did not match the expected output ✅ _(expected for all 50 negative test cases)_
+   - **PASS** – The actual output matched the expected output _(replace this test case with a better one)_
+   - **UI Error** – The script could not interact with the browser for that row _(check your internet connection and re-run)_
 4. After verifying, manually complete **Column G** (`Singlish input types covered`) and **Column H** (`Evidence or rationale for the input type covered`) for each test case.
 
 ---
 
 ## Troubleshooting
 
-| Problem | Solution |
-|---|---|
-| `pip` is not recognized | Make sure Python is installed and added to PATH. Re-install Python and check "Add to PATH" during setup. |
-| `playwright install` fails | Check your internet connection. Try running Command Prompt as Administrator. |
-| Browser opens but nothing types | Close the Excel file before running the script. Make sure no other program is using it. |
-| All rows show `UI Error` | The website may be down or slow. Try increasing `--wait-ms` to `8000`. |
-| Script finishes but Excel is not updated | Make sure you closed the Excel file before running the script. |
-| Output column shows previous test's result | Increase `--wait-ms` to allow more time for the page to update between tests. |
+| Problem                                    | Solution                                                                                                 |
+| ------------------------------------------ | -------------------------------------------------------------------------------------------------------- |
+| `pip` is not recognized                    | Make sure Python is installed and added to PATH. Re-install Python and check "Add to PATH" during setup. |
+| `playwright install` fails                 | Check your internet connection. Try running Command Prompt as Administrator.                             |
+| Browser opens but nothing types            | Close the Excel file before running the script. Make sure no other program is using it.                  |
+| All rows show `UI Error`                   | The website may be down or slow. Try increasing `--wait-ms` to `8000`.                                   |
+| Script finishes but Excel is not updated   | Make sure you closed the Excel file before running the script.                                           |
+| Output column shows previous test's result | Increase `--wait-ms` to allow more time for the page to update between tests.                            |
 
 ---
 
 ## Dependencies
 
-| Package | Purpose |
-|---|---|
-| `playwright` | Browser automation – controls Chrome to type inputs and read outputs |
-| `openpyxl` | Excel file read/write – reads test inputs and writes actual outputs and status |
+| Package      | Purpose                                                                        |
+| ------------ | ------------------------------------------------------------------------------ |
+| `playwright` | Browser automation – controls Chrome to type inputs and read outputs           |
+| `openpyxl`   | Excel file read/write – reads test inputs and writes actual outputs and status |
 
 ---
 
