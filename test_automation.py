@@ -424,8 +424,8 @@ def run_test():
     actual_col_idx = _find_column_index(header_values, args.actual_col, DEFAULT_ACTUAL_COLUMN_CANDIDATES)
     status_col_idx = _find_column_index(header_values, args.status_col, DEFAULT_STATUS_COLUMN_CANDIDATES)
 
-    actual_col_idx = 5
-    status_col_idx = 6
+    actual_col_idx = actual_col_idx or _ensure_column(ws, header_row, header_values, actual_col_name)
+    status_col_idx = status_col_idx or _ensure_column(ws, header_row, header_values, status_col_name)
 
     rows_total = max(0, int(ws.max_row or 0) - header_row)
     print(f"Starting Frontend-Only test with {rows_total} rows...")
